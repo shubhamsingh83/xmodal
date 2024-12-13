@@ -1,0 +1,39 @@
+.user-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.user-card > * {
+  flex: 1;
+  text-wrap: initial;
+  text-align: left;
+}
+
+.user-card .email {
+  flex:2;
+}
+
+.user-card:last-child {
+  text-align: center;
+}
+
+/* .user-card .btn{
+  background-color: blue;
+} */
+
+.btn-edit{
+  padding: 8px 16px; /* Increased padding */
+  font-size: 14px; /* Slightly larger font size */
+  background-color: #ffbb00;
+  color: white;
+  border: none;
+  border-radius: 8px; /* More rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+.btn-edit:hover {
+  background-color: hsl(44, 94%, 46%);
+}

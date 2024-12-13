@@ -1,110 +1,67 @@
-import React, { useState } from "react";
-import "./App.css";
+import React, { useEffect, useState } from "react";
+import Modal from "./components/Modal";
+import "./styles/App.css";
+import { getUsers } from "./utils/getUser";
+import UserDetails from "./components/UserDetails";
+import UserDetailsHeading from "./components/UserDetailsHeading";
+
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    dob: "",
-    phone: "",
-  });
+  const[users,setUsers] = useState([]);
+  const[isEditMode, setEditMode] = useState(false);
+  const [userId,setUserId] = useState("");
+  useEffect(()=>{
+    
+     const fetchUsers = async ()=>{
+      try {
+        const response = await getUsers();
+        setUsers(response.data);
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
+      } catch (error) {
+        console.log(error);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (formData.phone.length !== 10) {
-      alert("Invalid phone number. Please enter a 10-digit phone number.");
-    }
-    const DOB = new Date(formData.date);
+      }
+     
+     }
+     fetchUsers();
+  },[])
 
-    const currentDate = new Date();
+  const updateUser =  (users) =>{
+     setUsers(users);
+  }
 
-    if (DOB > currentDate) {
-      alert("Invalid date of birth. Date of birth cannot be in the future");
-    }
+  const handleEditMode = (id) => {
+     setEditMode(true);
+    setUserId(id);
+     console.log(userId);
+     setIsOpen(true);
+     
+  }
 
-    setFormData({
-      name: "",
-      email: "",
-      dob: "",
-      phone: "",
-    });
-  };
+  const handleModalOpen = () =>{
+     setIsOpen(false);
+     setEditMode(false);
+     setUserId("");
+  }
+      
 
+ 
   return (
     <div className="app">
-      <h1>User Details Form</h1>{" "}
-      <button className="btn-open" onClick={(e) => setIsOpen(true)}>
+      <h1>User Details Form</h1>
+      <button className="btn-open" onClick={() => setIsOpen(true)}>
         Open Form
       </button>
-      {isOpen && (
-        <div onClick={(e) => setIsOpen(false)} className="popup-box modal ">
-          <div onClick={(e) => e.stopPropagation()} className="box">
-            <h3>Fill Details</h3>
-            <div className="modal-content">
-              <form onSubmit={handleSubmit}>
-                <div className="input-field">
-                  <label htmlFor="username">Username:</label>
-                  <input
-                    type="text"
-                    name="name"
-                    id="username"
-                    onChange={handleChange}
-                    value={formData.name}
-                    required
-                  />
-                </div>
-                <div className="input-field">
-                  <label htmlFor="email">Email Address:</label>
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-                <div className="input-field">
-                  <label htmlFor="phone">Phone Number:</label>
-                  <input
-                    type="number"
-                    name="phone"
-                    id="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-                <div className="input-field">
-                  <label htmlFor="dob">Username</label>
-                  <input
-                    type="date"
-                    name="dob"
-                    id="dob"
-                    value={formData.dob}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-                <div className="input-field mt-5">
-                  <button type="submit" className="submit submit-button">
-                    Submit
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
+      {isOpen && <Modal onClose={handleModalOpen}  handleUpdateUser = {updateUser}  userId={userId}  isEditMode={isEditMode}/>}
+        <div className="edit-container">
+        <UserDetailsHeading/>
+        <div className="usersList">
+          {users && users.map((user,index)=>
+              <div key={index}><UserDetails {...user} handleEditMode = {handleEditMode} /></div>
+          )}
+        </div> 
         </div>
-      )}
     </div>
   );
 }
