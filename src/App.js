@@ -4,6 +4,8 @@ import "./styles/App.css";
 import { getUsers } from "./utils/getUser";
 import UserDetails from "./components/UserDetails";
 import UserDetailsHeading from "./components/UserDetailsHeading";
+import axios from "axios";
+import { useSnackbar } from "notistack";
 
 
 function App() {
@@ -11,21 +13,25 @@ function App() {
   const[users,setUsers] = useState([]);
   const[isEditMode, setEditMode] = useState(false);
   const [userId,setUserId] = useState("");
-  useEffect(()=>{
+   const { enqueueSnackbar } = useSnackbar();
+
+
+  const fetchUsers = async ()=>{
+    try {
+      const response = await getUsers();
+      setUsers(response.data);
+
+    } catch (error) {
+      console.log(error);
+
+    }
+   
+   }
+
+   useEffect(()=>{
     
-     const fetchUsers = async ()=>{
-      try {
-        const response = await getUsers();
-        setUsers(response.data);
-
-      } catch (error) {
-        console.log(error);
-
-      }
-     
-     }
-     fetchUsers();
-  },[])
+    fetchUsers();
+ },[])
 
   const updateUser =  (users) =>{
      setUsers(users);
@@ -44,6 +50,21 @@ function App() {
      setEditMode(false);
      setUserId("");
   }
+
+  const handleUserDelete = async(id) =>{
+    try {
+        await axios.delete(`http://localhost:8080/users/${id}`)
+        enqueueSnackbar(
+          "User Deleted successfully!",
+          {variant:"success"}
+        );
+         fetchUsers();
+    } catch (error) {
+      console.log(error);
+    }
+     const filteredUser = users.filter(user => user.id !== id);
+     setUsers(filteredUser);
+  }
       
 
  
@@ -58,7 +79,7 @@ function App() {
         <UserDetailsHeading/>
         <div className="usersList">
           {users && users.map((user,index)=>
-              <div key={index}><UserDetails {...user} handleEditMode = {handleEditMode} /></div>
+              <div key={index}><UserDetails {...user} handleEditMode = {handleEditMode}  handleUserDelete = {handleUserDelete} /></div>
           )}
         </div> 
         </div>

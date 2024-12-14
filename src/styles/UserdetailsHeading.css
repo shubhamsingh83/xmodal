@@ -20,3 +20,40 @@
   .header:last-child {
     text-align: center;
   }
+
+
+
+
+
+  @media (max-width: 1024px) {
+  .header {
+    flex-direction: column; /* Stack items vertically on medium screens */
+    align-items: flex-start;
+  }
+  .header > * {
+    flex: none; /* Remove flex sizing for better control */
+    width: 100%; /* Full-width items */
+    margin-bottom: 8px; /* Add spacing between items */
+    font-size: 14px; /* Slightly smaller font size */
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    margin-bottom: 15px; /* Add spacing between headers */
+  }
+  .header > * {
+    font-size: 12px; /* Smaller font size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    flex-direction: column; /* Ensure vertical stacking */
+    margin-bottom: 20px; /* Increase spacing for very small screens */
+  }
+  .header > * {
+    text-align: center; /* Center-align text for smaller screens */
+    font-size: 10px; /* Smallest font size */
+  }
+}

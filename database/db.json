@@ -37,15 +37,6 @@
       "id": "8b74"
     },
     {
-      "name": "mukesh",
-      "email": "ram@gmail.com",
-      "dob": "2019-02-12",
-      "phone": "8881311203",
-      "state": "Assam",
-      "city": "Guwahati",
-      "id": "5810"
-    },
-    {
       "id": "489a",
       "name": "gecefuh",
       "email": "quqovucul@mailinator.com",
@@ -62,15 +53,6 @@
       "phone": "4434432321",
       "state": "Tripura",
       "city": "Dharmanagar"
-    },
-    {
-      "id": "b584",
-      "name": "pipigotiv",
-      "email": "porabacut@mailinator.com",
-      "dob": "2023-08-25",
-      "phone": "3453453449",
-      "state": "Himachal Pradesh",
-      "city": "Dharamsala"
     },
     {
       "id": "e9a8",
@@ -98,33 +80,6 @@
       "phone": "7377377340",
       "state": "Mizoram",
       "city": "Champhai"
-    },
-    {
-      "name": "vosudev",
-      "email": "jybanam@mailinator.com",
-      "dob": "1992-02-10",
-      "phone": "2952952957",
-      "state": "Maharashtra",
-      "city": "Mumbai",
-      "id": "2605"
-    },
-    {
-      "id": "12cf",
-      "name": "herokhy",
-      "email": "ciwy@mailinator.com",
-      "dob": "1989-09-06",
-      "phone": "1871871872",
-      "state": "Karnataka",
-      "city": "Hubballi"
-    },
-    {
-      "id": "5cff",
-      "name": "sosamo",
-      "email": "mevagyt@mailinator.com",
-      "dob": "1999-09-28",
-      "phone": "8888888881",
-      "state": "Kerala",
-      "city": "Kottayam"
     }
   ]
 }

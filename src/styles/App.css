@@ -25,4 +25,39 @@
     margin-top: 20px;
   }
 
+
+
+
+
+
+  @media (max-width: 1024px) {
+    .edit-container {
+      width: 90%; /* Slightly narrower on medium screens */
+    }
+    .btn-open {
+      padding: 10px 20px; /* Adjust padding for medium screens */
+      font-size: 16px; /* Smaller font size */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .edit-container {
+      width: 100%; /* Full width on small screens */
+    }
+    .btn-open {
+      padding: 8px 16px; /* Reduced padding */
+      font-size: 14px; /* Smaller font size for mobile screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .app {
+      padding: 10px; /* Reduced padding on very small screens */
+    }
+    .btn-open {
+      width: 100%; /* Full-width button */
+      font-size: 12px; /* Smallest font size for very small screens */
+    }
+  }
+  
  

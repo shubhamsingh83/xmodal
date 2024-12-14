@@ -37,3 +37,62 @@
 .btn-edit:hover {
   background-color: hsl(44, 94%, 46%);
 }
+
+
+.btn-delete{
+  padding: 8px 16px; /* Increased padding */
+  font-size: 14px; /* Slightly larger font size */
+  background-color: #ff2600;
+  color: white;
+  border: none;
+  border-radius: 8px; /* More rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
+  margin-left: 5px;
+}
+
+.btn-delete:hover {
+  background-color: #c01f02;
+}
+
+
+
+@media (max-width: 1024px) {
+  .user-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .user-card > * {
+    flex: none; /* Remove flex sizing for better control */
+    width: 100%; /* Full-width items */
+    margin-bottom: 8px;
+  }
+  .btn-edit {
+    font-size: 12px; /* Adjust button font size */
+    padding: 6px 12px; /* Reduce button padding */
+  }
+}
+
+@media (max-width: 768px) {
+  .user-card {
+    margin-bottom: 15px; /* Add spacing between user cards */
+  }
+  .btn-edit {
+    width: 100%; /* Full-width button */
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-card {
+    flex-direction: column; /* Ensure vertical stacking */
+    margin-bottom: 20px; /* More spacing between cards for smaller screens */
+  }
+  .user-card .email {
+    text-align: center; /* Center-align email on small screens */
+  }
+  .btn-edit {
+    font-size: 10px; /* Small font size for very small screens */
+    padding: 4px 8px; /* Reduce padding further */
+  }
+}
