@@ -40,7 +40,6 @@ function App() {
   const handleEditMode = (id) => {
      setEditMode(true);
     setUserId(id);
-     console.log(userId);
      setIsOpen(true);
      
   }
@@ -74,7 +73,7 @@ function App() {
       <button className="btn-open" onClick={() => setIsOpen(true)}>
         Open Form
       </button>
-      {isOpen && <Modal onClose={handleModalOpen}  handleUpdateUser = {updateUser}  userId={userId}  isEditMode={isEditMode}/>}
+      {isOpen && <Modal onClose={handleModalOpen}  handleUpdateUser = {updateUser}  userId={userId}  isEditMode={isEditMode} users={users}/>}
         <div className="edit-container">
         <UserDetailsHeading/>
         <div className="usersList">

@@ -4,7 +4,7 @@ import { getUsers } from "../utils/getUser";
 import { useSnackbar } from "notistack";
 
 
-function Form({ onClose ,handleUpdateUser, userId, isEditMode}) {
+function Form({ onClose ,handleUpdateUser, userId, isEditMode,users}) {
   const { enqueueSnackbar } = useSnackbar();
   const [formData, setFormData] = useState({
     name: "",
@@ -38,7 +38,7 @@ function Form({ onClose ,handleUpdateUser, userId, isEditMode}) {
     if (isEditMode) {
       fetchUserData();
     }
-  }, [isEditMode, userId]); // Added dependencies to the array
+  }, [isEditMode, userId]);
   
   
 
@@ -86,10 +86,11 @@ function Form({ onClose ,handleUpdateUser, userId, isEditMode}) {
     });
   };
 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
   
-    // Validate phone number
+   
 
     if(formData.name.length < 6){
       enqueueSnackbar(
@@ -128,10 +129,31 @@ function Form({ onClose ,handleUpdateUser, userId, isEditMode}) {
       return;
     }
 
+    console.log(users);
+    console.log(formData);
+    const isUserNameExists = users.find(user=>user.name.toLowerCase() === formData.name.toLowerCase());
+    const isUserEmailExists = users.find(user=>user.email.toLowerCase() === formData.email.toLowerCase())
+    if(isUserNameExists  ){
+      enqueueSnackbar(
+        "Username already exists",
+        {variant:"error"}
+      );
+      return;
+    }
+
+    if(isUserEmailExists ){
+      enqueueSnackbar(
+        "Email already exists",
+        {variant:"error"}
+      );
+      return;
+    }
+    
+
    if(isEditMode){
     try{
       const response = await axios.put(`http://localhost:8080/users/${userId}`,formData)
-      console.log(response);
+
    }catch(error){
         console.log(error);
    }
