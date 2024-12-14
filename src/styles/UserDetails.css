@@ -3,51 +3,49 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 10px;
+  flex-wrap: wrap; 
 }
 
 .user-card > * {
   flex: 1;
   text-wrap: initial;
   text-align: left;
+  margin: 5px 0; 
 }
 
 .user-card .email {
-  flex:2;
+  flex: 2;
+  word-break: break-word; 
 }
 
 .user-card:last-child {
   text-align: center;
 }
 
-/* .user-card .btn{
-  background-color: blue;
-} */
-
-.btn-edit{
-  padding: 8px 16px; /* Increased padding */
-  font-size: 14px; /* Slightly larger font size */
+.btn-edit {
+  padding: 8px 16px; 
+  font-size: 14px; 
   background-color: #ffbb00;
   color: white;
   border: none;
-  border-radius: 8px; /* More rounded corners */
+  border-radius: 8px; 
   cursor: pointer;
-  transition: background-color 0.3s ease; /* Smooth transition on hover */
+  transition: background-color 0.3s ease; 
 }
 
 .btn-edit:hover {
   background-color: hsl(44, 94%, 46%);
 }
 
-
-.btn-delete{
-  padding: 8px 16px; /* Increased padding */
-  font-size: 14px; /* Slightly larger font size */
+.btn-delete {
+  padding: 8px 16px; 
+  font-size: 14px; 
   background-color: #ff2600;
   color: white;
   border: none;
-  border-radius: 8px; /* More rounded corners */
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease; /* Smooth transition on hover */
+  transition: background-color 0.3s ease; 
   margin-left: 5px;
 }
 
@@ -55,44 +53,62 @@
   background-color: #c01f02;
 }
 
-
-
+/* Tablet Screen (max-width: 1024px) */
 @media (max-width: 1024px) {
   .user-card {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: column; 
+    align-items: flex-start; 
   }
+
   .user-card > * {
-    flex: none; /* Remove flex sizing for better control */
-    width: 100%; /* Full-width items */
+    flex: none; 
+    width: 100%; 
     margin-bottom: 8px;
   }
-  .btn-edit {
-    font-size: 12px; /* Adjust button font size */
-    padding: 6px 12px; /* Reduce button padding */
-  }
-}
 
-@media (max-width: 768px) {
-  .user-card {
-    margin-bottom: 15px; /* Add spacing between user cards */
-  }
-  .btn-edit {
-    width: 100%; /* Full-width button */
+  .btn-edit,
+  .btn-delete {
+    font-size: 12px; 
+    padding: 6px 12px;
+    width: 100%; 
     text-align: center;
   }
 }
 
+/* Mobile Screen (max-width: 768px) */
+@media (max-width: 768px) {
+  .user-card {
+    margin-bottom: 15px; 
+  }
+
+  .user-card .email {
+    text-align: center;
+  }
+
+  .btn-edit,
+  .btn-delete {
+    font-size: 12px; 
+    padding: 5px 10px;
+  }
+}
+
+/* Small Mobile Screen (max-width: 480px) */
 @media (max-width: 480px) {
   .user-card {
-    flex-direction: column; /* Ensure vertical stacking */
-    margin-bottom: 20px; /* More spacing between cards for smaller screens */
+    flex-direction: column; 
+    margin-bottom: 20px; 
   }
+
   .user-card .email {
-    text-align: center; /* Center-align email on small screens */
+    text-align: center;
+    word-break: break-word;
   }
-  .btn-edit {
-    font-size: 10px; /* Small font size for very small screens */
-    padding: 4px 8px; /* Reduce padding further */
+
+  .btn-edit,
+  .btn-delete {
+    font-size: 10px;
+    padding: 4px 8px;
+    width: 100%;
+    text-align: center;
   }
 }

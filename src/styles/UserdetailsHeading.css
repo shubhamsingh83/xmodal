@@ -27,33 +27,33 @@
 
   @media (max-width: 1024px) {
   .header {
-    flex-direction: column; /* Stack items vertically on medium screens */
+    flex-direction: column; 
     align-items: flex-start;
   }
   .header > * {
-    flex: none; /* Remove flex sizing for better control */
-    width: 100%; /* Full-width items */
-    margin-bottom: 8px; /* Add spacing between items */
-    font-size: 14px; /* Slightly smaller font size */
+    flex: none; 
+    width: 100%; 
+    margin-bottom: 8px;
+    font-size: 14px; 
   }
 }
 
 @media (max-width: 768px) {
   .header {
-    margin-bottom: 15px; /* Add spacing between headers */
+    margin-bottom: 15px;
   }
   .header > * {
-    font-size: 12px; /* Smaller font size for smaller screens */
+    font-size: 12px; 
   }
 }
 
 @media (max-width: 480px) {
   .header {
-    flex-direction: column; /* Ensure vertical stacking */
-    margin-bottom: 20px; /* Increase spacing for very small screens */
+    flex-direction: column; 
+    margin-bottom: 20px; 
   }
   .header > * {
-    text-align: center; /* Center-align text for smaller screens */
-    font-size: 10px; /* Smallest font size */
+    text-align: center; 
+    font-size: 10px; 
   }
 }

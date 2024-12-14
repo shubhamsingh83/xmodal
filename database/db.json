@@ -1,15 +1,6 @@
 {
   "users": [
     {
-      "name": "Abhinansh",
-      "email": "singh832001@gmail.com",
-      "dob": "2022-02-12",
-      "phone": "8881311203",
-      "state": "Assam",
-      "city": "Silchar",
-      "id": "f331"
-    },
-    {
       "name": "Shubham",
       "email": "subh@gmail.com",
       "dob": "2022-06-12",
@@ -64,15 +55,6 @@
       "city": "Nashik"
     },
     {
-      "id": "6b77",
-      "name": "fumazaj",
-      "email": "moliqyx@mailinator.com",
-      "dob": "1975-06-15",
-      "phone": "2982982981",
-      "state": "West Bengal",
-      "city": "Durgapur"
-    },
-    {
       "id": "61ce",
       "name": "fyxegutaro",
       "email": "vikeciry@mailinator.com",
@@ -80,6 +62,15 @@
       "phone": "7377377340",
       "state": "Mizoram",
       "city": "Champhai"
+    },
+    {
+      "id": "5790",
+      "name": "Anvit Singh",
+      "email": "singh832001@gmail.com",
+      "dob": "2022-01-14",
+      "phone": "1234567891",
+      "state": "Mizoram",
+      "city": "Kolasib"
     }
   ]
 }

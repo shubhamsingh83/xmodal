@@ -4,14 +4,14 @@
   }
   
   .btn-open {
-    padding: 12px 24px; /* Increased padding */
-    font-size: 18px; /* Slightly larger font size */
+    padding: 12px 24px; 
+    font-size: 18px; 
     background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 8px; /* More rounded corners */
+    border-radius: 8px; 
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Smooth transition on hover */
+    transition: background-color 0.3s ease; 
   }
   
   .btn-open:hover {
@@ -32,31 +32,31 @@
 
   @media (max-width: 1024px) {
     .edit-container {
-      width: 90%; /* Slightly narrower on medium screens */
+      width: 90%;
     }
     .btn-open {
-      padding: 10px 20px; /* Adjust padding for medium screens */
-      font-size: 16px; /* Smaller font size */
+      padding: 10px 20px; 
+      font-size: 16px; 
     }
   }
   
   @media (max-width: 768px) {
     .edit-container {
-      width: 100%; /* Full width on small screens */
+      width: 100%; 
     }
     .btn-open {
-      padding: 8px 16px; /* Reduced padding */
-      font-size: 14px; /* Smaller font size for mobile screens */
+      padding: 8px 16px; 
+      font-size: 14px; 
     }
   }
   
   @media (max-width: 480px) {
     .app {
-      padding: 10px; /* Reduced padding on very small screens */
+      padding: 10px; 
     }
     .btn-open {
-      width: 100%; /* Full-width button */
-      font-size: 12px; /* Smallest font size for very small screens */
+      width: 100%; 
+      font-size: 12px; 
     }
   }
   
