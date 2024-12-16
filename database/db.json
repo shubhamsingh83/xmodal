@@ -10,49 +10,13 @@
       "id": "a660"
     },
     {
-      "name": "Ashutosh",
-      "email": "ashu@gmail.com",
-      "dob": "2023-02-12",
-      "phone": "8881311203",
-      "state": "Assam",
-      "city": "Guwahati",
-      "id": "ddff"
-    },
-    {
-      "name": "RamAshish",
-      "email": "ram@gmail.com",
-      "dob": "2024-12-09",
-      "phone": "8881311203",
-      "state": "Assam",
-      "city": "Dibrugarh",
-      "id": "8b74"
-    },
-    {
-      "id": "489a",
-      "name": "gecefuh",
-      "email": "quqovucul@mailinator.com",
-      "dob": "1976-11-27",
-      "phone": "7666666655",
-      "state": "West Bengal",
-      "city": "Durgapur"
-    },
-    {
-      "id": "2d88",
-      "name": "myzupyl",
-      "email": "suqihopyle@mailinator.com",
+      "name": "maneesh",
+      "email": "qihopyle@mailinator.com",
       "dob": "2014-08-25",
       "phone": "4434432321",
       "state": "Tripura",
-      "city": "Dharmanagar"
-    },
-    {
-      "id": "e9a8",
-      "name": "jakoxo",
-      "email": "qotuh@mailinator.com",
-      "dob": "2018-08-28",
-      "phone": "5815815812",
-      "state": "Maharashtra",
-      "city": "Nashik"
+      "city": "Dharmanagar",
+      "id": "2d88"
     },
     {
       "id": "61ce",
@@ -71,6 +35,33 @@
       "phone": "1234567891",
       "state": "Mizoram",
       "city": "Kolasib"
+    },
+    {
+      "id": "9846",
+      "name": "Sameer",
+      "email": "sameersingh832001@gmail.com",
+      "dob": "2024-12-02",
+      "phone": "1234567891",
+      "state": "Mizoram",
+      "city": "Lunglei"
+    },
+    {
+      "id": "6cae",
+      "name": "Akash Singh",
+      "email": "akashsingh832001@gmail.com",
+      "dob": "2024-12-04",
+      "phone": "1234567891",
+      "state": "Madhya Pradesh",
+      "city": "Jabalpur"
+    },
+    {
+      "id": "e8a8",
+      "name": "Subh  Singh",
+      "email": "subhs@gmail.com",
+      "dob": "2024-12-04",
+      "phone": "8770511186",
+      "state": "Meghalaya",
+      "city": "Nongpoh"
     }
   ]
 }

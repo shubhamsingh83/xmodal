@@ -20,13 +20,12 @@ const triggerUserDelete = ()=>{
          <span>{dob}</span>
     
 
-        <span>{state}</span>
+         <span>{state}</span>
     
          <span>{city}</span>
 
          
-
-         <span className='btn'>
+          <span className='btn'>
           <button onClick={setEditMode} className='btn-edit'>Edit</button>
           <button onClick={triggerUserDelete} className='btn-delete'>Delete</button>
           </span>
